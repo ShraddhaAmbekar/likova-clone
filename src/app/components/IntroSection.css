@@ -1,0 +1,161 @@
+
+.likova-intro {
+ isolation: isolate;
+    color: #f8f8fb;
+    background: #070b20;
+    width: 100%;
+    min-height: 100svh;
+    font-family: TT Norms Pro, Helvetica, Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Headline spans the upper-middle portion of the screen */
+.likova-intro__headline {
+  z-index: 2;
+    color: #f8f8fb;
+    letter-spacing: -.025em;
+    text-transform: uppercase;
+    width: 100%;
+    margin: 0;
+    padding: 8.7vw 1.15vw 0;
+    font-size: clamp(30px, 2.75vw, 52px);
+    font-weight: 400;
+    line-height: 1.08;
+    position: relative;
+}
+
+/* Preserve the deliberate line breaks from the reference */
+.likova-intro__line {
+  display: block;
+  white-space: nowrap;
+}
+
+.likova-intro__line:first-child {
+  padding-left: 49.8%;
+}
+
+.likova-intro__word {
+ will-change: transform, opacity;
+    margin-right: .25em;
+    display: inline-block;
+}
+
+/* Floating object sits behind the text */
+.likova-intro__artwork {
+  position: absolute;
+  z-index: 1;
+  top: 21.5%;
+  left: 63.5%;
+  width: min(21vw, 390px);
+  pointer-events: none;
+}
+
+.likova-intro__artwork img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Supporting paragraph in the lower-right corner */
+.likova-intro__description {
+  position: absolute;
+  z-index: 2;
+  top: 72.8%;
+  left: 50.8%;
+  width: 40%;
+  margin: 0;
+  color: #a5a9bc;
+  font-size: clamp(10px, 0.72vw, 13px);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+user agent stylesheet
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+/* Tablet */
+@media (max-width: 1100px) {
+  .likova-intro {
+    min-height: 850px;
+    
+  }
+
+  .likova-intro__headline {
+    
+    font-size: clamp(28px, 3.4vw, 40px);
+    line-height: 1.12;
+     padding: 150px 20px 0;
+      
+       
+  }
+
+  .likova-intro__line {
+  
+      white-space: nowrap;
+    display: block;
+  }
+
+  .likova-intro__line:first-child {
+    padding-left: 30%;
+  }
+
+  .likova-intro__artwork {
+    top: 30%;
+    left: 58%;
+    width: 32%;
+  }
+
+  .likova-intro__description {
+    top: auto;
+    bottom: 12%;
+    left: 50%;
+    width: 44%;
+    font-size: 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .likova-intro {
+    min-height: 780px;
+    min-height: 100svh;
+  }
+
+  .likova-intro__headline {
+    padding: 145px 18px 0;
+    font-size: clamp(26px, 7vw, 38px);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+  }
+
+  .likova-intro__line,
+  .likova-intro__line:first-child {
+    padding-left: 0;
+    white-space: normal;
+  }
+
+  .likova-intro__artwork {
+    top: 42%;
+    left: 42%;
+    width: 52%;
+  }
+
+  .likova-intro__description {
+    top: auto;
+    right: 18px;
+    bottom: 8%;
+    left: 18px;
+    width: auto;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+}

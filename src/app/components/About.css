@@ -1,0 +1,514 @@
+
+
+.h5 {
+  font-family: "Fragment Serif", Arial, sans-serif;
+  font-size: 3.75rem;
+  line-height: 118%;
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.h6 {
+  font-family: "Fragment Glare", Arial, sans-serif;
+  font-size: 1.75rem;
+  line-height: 123%;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+/* ABOUT SECTION */
+
+.about-section {
+  width: 100%;
+  background: #121717;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* MAIN ABOUT INFO */
+
+.about-info {
+  width: 100%;
+  min-height: 100vh;
+  padding: 3.5rem 3vw 5rem;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 22%);
+  column-gap: 7.5vw;
+  align-items: stretch;
+}
+
+/* LEFT SIDE */
+
+.about-left {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 1vw;
+  align-items: stretch;
+  min-width: 0;
+}
+
+/* HEADING AREA */
+
+.about-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  min-height: 85vh;
+  min-width: 0;
+}
+
+/* ABOUT CAPTION */
+
+.about-caption {
+  padding-top: 0;
+}
+
+.h6 {
+  font-family: "Fragment Glare", Georgia, serif;
+  font-size: 1.75rem;
+  line-height: 1.23;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #b8b8b5;
+}
+
+/* MAIN HEADING */
+
+.h5-glare {
+  margin: 0;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  font-family: "Fragment Glare", Arial, serif;
+  font-size: clamp(2.8rem, 4.75vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  font-style: italic
+}
+
+.h5-glare span {
+  display: block;
+  white-space: nowrap;
+}
+
+.h5-glare strong {
+  font-family: "Fragment Serif", Georgia, serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* CENTER IMAGE */
+
+.about-img {
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+
+.img-full-cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 893 / 1376;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* RIGHT DESCRIPTION */
+
+.about-text-box {
+font-family:"Inter 28 Pt,Arial,sans-serif";
+  width: 100%;
+  max-width: 23rem;
+  padding-top: 0;
+
+  display: flex; 
+  flex-direction: column;
+  gap: 2rem;
+
+  
+}
+
+.b1 {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: clamp(1rem, 1.1vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: #f1f1ef;
+}
+
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+
+  .about-info {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 3rem 4vw 5rem;
+  }
+
+  .about-left {
+    grid-template-columns: 1fr 1fr;
+    gap: 3vw;
+  }
+
+  .about-heading {
+    min-height: 75vh;
+  }
+
+  .h5-glare {
+    font-size: clamp(3.5rem, 7vw, 5rem);
+  }
+
+  .about-text-box {
+    max-width: 550px;
+    margin-left: auto;
+    padding-top: 0;
+  }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .about-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 2rem 1.25rem 4rem;
+  }
+
+  .about-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-heading {
+    min-height: auto;
+    gap: 4rem;
+  }
+
+  .h6 {
+    font-size: 1.25rem;
+  }
+
+  .h5-glare {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    line-height: 1;
+  }
+
+  .h5-glare span {
+    white-space: normal;
+  }
+
+  .about-img {
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .img-full-cover {
+    aspect-ratio: 0.78 / 1;
+  }
+
+  .about-text-box {
+    max-width: 100%;
+    gap: 1.5rem;
+  }
+
+  .b1 {
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+}
+
+
+
+/* =================================
+   STATISTICS SECTION
+================================= */
+
+.stats {
+  width: 100%;
+  min-height: 100vh;
+  padding: 5rem 3vw 8rem;
+  background: #121717;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* ROW 1 */
+
+.stats-row-1 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: start;
+}
+
+/* COMMON BOX */
+
+.stats-box {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* STAT NUMBER ROW */
+
+.stats-box-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+/* LARGE NUMBERS */
+
+.h2.mob-h5 {
+  margin: 0;
+      font-family: Playfair Display, serif;
+  font-size: 10.25rem;
+  font-weight: 200;
+  line-height: 103%;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* PERCENTAGE AND SQ FT */
+
+.text-color-white-70 {
+  color: #ffffffb3;
+}
+
+.b0.mob-b1 {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 2.5rem;
+  line-height: 123%;
+  font-weight: 300;
+}
+
+.is-it {
+  font-style: italic;
+}
+
+/* DESCRIPTION */
+
+.b1.mob-b4 {
+  margin: 1rem 0 0;
+  max-width: 22rem;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 1.25rem;
+  line-height: 125%;
+  font-weight: 300;
+  letter-spacing: 0;
+}
+
+/* 60% */
+
+.stats-box-1 {
+  grid-column: 6 / span 3;
+}
+
+/* 30 */
+
+.stats-box-2 {
+  grid-column: 10 / span 3;
+}
+
+/* ROW 2 */
+
+.stats-row-2 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin-top: 5rem;
+}
+
+.stats-box-3 {
+  grid-column: 1 / span 5;
+}
+
+.in-stats-row-2 {
+  gap: 1rem;
+}
+
+.stats-box-3 .h2.mob-h5 {
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+
+.stats-box-3 .b0 {
+  font-size: 2rem;
+}
+
+/* ROW 3 */
+
+.stats-row-3 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin-top: 2rem;
+}
+
+.stats-box-4 {
+  grid-column: 5 / span 5;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.stats-box-4 .stats-box-row {
+  gap: 0.3rem;
+}
+
+.stats-box-4-text {
+  padding-top: 1rem;
+}
+
+.stats-box-4-text .b1 {
+  max-width: 20rem;
+  margin: 0;
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 1024px) {
+
+  .stats {
+    padding: 4rem 4vw 6rem;
+  }
+
+  .h2.mob-h5 {
+    font-size: 8rem;
+  }
+
+  .stats-row-1 {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 3rem 1rem;
+  }
+
+  .stats-box-1 {
+    grid-column: 3 / span 2;
+  }
+
+  .stats-box-2 {
+    grid-column: 5 / span 2;
+  }
+
+  .stats-row-2,
+  .stats-row-3 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .stats-box-3 {
+    grid-column: 1 / span 4;
+  }
+
+  .stats-box-4 {
+    grid-column: 3 / span 4;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .b0.mob-b1 {
+    font-size: 1.8rem;
+  }
+
+  .b1.mob-b4 {
+    font-size: 1rem;
+  }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .stats {
+    min-height: auto;
+    padding: 3rem 1.25rem 5rem;
+  }
+
+  .stats-row-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem 1rem;
+  }
+
+  .stats-box-1,
+  .stats-box-2 {
+    grid-column: auto;
+  }
+
+  .stats-row-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 4rem;
+  }
+
+  .stats-box-3 {
+    grid-column: 1;
+  }
+
+  .stats-row-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 4rem;
+  }
+
+  .stats-box-4 {
+    grid-column: 1;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .h2.mob-h5 {
+    font-size: clamp(3.5rem, 14vw, 5rem);
+    line-height: 1;
+    letter-spacing: -0.06em;
+  }
+
+  .stats-box-row {
+    gap: 0.3rem;
+  }
+
+  .b0.mob-b1 {
+    font-size: 1.1rem;
+  }
+
+  .b1.mob-b4 {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    margin-top: 0.8rem;
+  }
+
+  .stats-box-3 .b0 {
+    font-size: 1.1rem;
+  }
+
+  .stats-box-4 .stats-box-row {
+    gap: 0.2rem;
+  }
+}

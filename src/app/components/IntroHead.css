@@ -1,0 +1,42 @@
+
+.intro__head {
+  position: relative;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.intro__text {
+  display: none;
+  margin: 0;
+  font-size: clamp(32px, 5vw, 72px);
+  line-height: 1.05;
+}
+
+.intro__bookmark {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 24px;
+}
+
+.intro__scroll-button {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  background: #f5f3ed;
+  color: #171717;
+}
+
+.intro__scroll-button svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.2;
+}
+
+@media (max-width: 979px) {
+  .intro__text {
+    display: block;
+  }
+}
