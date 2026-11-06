@@ -1,0 +1,326 @@
+
+/* =================================
+   BELIEF VALUES SECTION
+================================= */
+
+.belief-values {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  background: #121717;
+  color: #fff;
+  isolation: isolate;
+}
+
+/* Background image */
+
+.belief-values-background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.belief-values-background picture,
+.belief-values-background img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.belief-values-background img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Dark overlay */
+
+.belief-values-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(10, 14, 13, 0.48);
+}
+
+/* Main container */
+
+.belief-values-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 7% 4%;
+}
+
+/* Intro text */
+
+.belief-values-text {
+  position: absolute;
+  top: 10%;
+  right: 7%;
+  width: 19%;
+  z-index: 2;
+}
+
+.belief-values-text p {
+  margin: 0 0 2.5rem;
+  color: #fff;
+  font-family: "Inter 28 Pt", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+/* Cards layout */
+
+.belief-values-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 300px 300px;
+  column-gap: 6.2%;
+  row-gap: 50px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Individual card item */
+
+.belief-item {
+  position: relative;
+  min-width: 0;
+  width: 100%;
+}
+
+/* Card positions */
+
+.belief-card-one {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.belief-card-two {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.belief-card-three {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.belief-card-four {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.belief-card-five {
+  grid-column: 4;
+  grid-row: 2;
+}
+
+/* Glass card */
+
+.belief-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 14px;
+  overflow: hidden;
+
+  background: rgba(190, 184, 179, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition:
+    background 0.4s ease,
+    transform 0.5s ease;
+}
+
+/* Subtle card hover */
+
+.belief-card:hover {
+  background: rgba(210, 205, 200, 0.45);
+  transform: translateY(-5px);
+}
+
+/* Card content */
+
+.belief-card-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+}
+
+.belief-card-content h3 {
+  margin: 0 0 22px;
+  color: #fff;
+  font-family: "Fragment Glare", Georgia, serif;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.belief-card-content p {
+  margin: 0;
+  color: #fff;
+  font-family: "Inter 28 Pt", Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+/* Number below card */
+
+.belief-number {
+  display: block;
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Inter 28 Pt", Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 300;
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 991px) {
+  .belief-values-container {
+    padding: 80px 4%;
+  }
+
+  .belief-values-text {
+    top: 5%;
+    right: 5%;
+    width: 28%;
+  }
+
+  .belief-values-grid {
+    grid-template-rows: 180px 180px;
+    column-gap: 3%;
+    row-gap: 50px;
+    width: 75%;
+    margin-left: 0;
+  }
+
+  .belief-card {
+    min-height: 180px;
+  }
+
+  .belief-card-content h3 {
+    font-size: 12px;
+  }
+
+  .belief-card-content p {
+    font-size: 8px;
+  }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 767px) {
+  .belief-values {
+    min-height: auto;
+  }
+
+  .belief-values-container {
+    min-height: auto;
+    padding: 45px 6% 60px;
+  }
+
+  .belief-values-background img {
+    object-position: center;
+  }
+
+  .belief-values-overlay {
+    background: rgba(10, 14, 13, 0.58);
+  }
+
+  .belief-values-text {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 0 40px auto;
+  }
+
+  .belief-values-text p {
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  .belief-values-grid {
+    width: 100%;
+    margin: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+    gap: 35px 15px;
+  }
+
+  .belief-card-one,
+  .belief-card-two,
+  .belief-card-three,
+  .belief-card-four,
+  .belief-card-five {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .belief-item {
+    width: 100%;
+  }
+
+  .belief-card {
+    min-height: 180px;
+    padding: 18px 10px;
+  }
+
+  .belief-card-content h3 {
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+
+  .belief-card-content p {
+    font-size: 10px;
+    line-height: 1.35;
+  }
+
+  .belief-number {
+    font-size: 10px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+  .belief-values-grid {
+    gap: 25px 10px;
+  }
+
+  .belief-card {
+    min-height: 155px;
+    padding: 12px 8px;
+  }
+
+  .belief-card-content h3 {
+    font-size: 12px;
+  }
+
+  .belief-card-content p {
+    font-size: 9px;
+  }
+}

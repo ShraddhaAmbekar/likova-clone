@@ -1,487 +1,157 @@
-
-:root {
-  --likova-header-height: 410px;
-  --likova-black: #080808;
-  --likova-white: #fff;
-}
-
-.likova-header {
-  position: absolute;
+/* Fixed navbar */
+.elyse-header {
+  position: fixed; /* Important: keeps navbar at the top */
   top: 0;
   left: 0;
+  z-index: 1000;
   width: 100%;
-  height: var(--likova-header-height);
-  z-index: 100;
-  color: var(--likova-black);
-  background: var(--likova-white);
-  transition: height 0.45s ease;
-}
-
-.likova-header__background {
-  position: absolute;
-  inset: 0;
-  background: #fff;
-  pointer-events: none;
-}
-
-.likova-header__content {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.likova-header__grid {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-/* Top navigation */
-
-.header-menu,
-.header-office,
-.header-favourites,
-.header-contact {
-  position: absolute;
-  top: 19px;
-  display: flex;
-  align-items: center;
-}
-
-.header-menu {
-  left: 24px;
-}
-
-.header-office {
-  left: 67.3%;
-}
-
-.header-favourites {
-  left: 83.9%;
-}
-
-.header-contact {
-  right: 20px;
-}
-
-.header-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 3px 0;
-  color: #111;
+  height: 70px;
+  padding: 0 3%;
+  color: #fff;
   background: transparent;
-  border: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1.3;
-  text-decoration: none;
-  text-transform: uppercase;
-  white-space: nowrap;
-  cursor: pointer;
+  transition:
+    background 0.4s ease,
+    backdrop-filter 0.4s ease,
+    border-color 0.4s ease;
 }
 
-.header-link:hover {
-  opacity: 0.6;
+/* Navbar when scrolling */
+.elyse-header.is-scrolled {
+  background: rgba(17, 23, 20, 0.65);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
-.burger-button {
-  width: 47px;
-  height: 18px;
-  padding: 0;
-}
-
-.header-burger {
-  display: flex;
-  width: 47px;
-  height: 13px;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.header-burger span {
-  display: block;
-  width: 47px;
-  height: 1px;
-  background: #111;
-  transition: transform 0.3s ease;
-}
-
-.burger-button[aria-expanded="true"] .header-burger span:first-child {
-  transform: translateY(6px) rotate(20deg);
-}
-
-.burger-button[aria-expanded="true"] .header-burger span:last-child {
-  transform: translateY(-6px) rotate(-20deg);
-}
-
-.favourites-link {
-  gap: 11px;
-  font-size: 14px;
-}
-
-.favourites-link svg {
-  width: 20px;
-  height: 20px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.7;
-}
-
-/* Oversized logo panel */
-
-.header-brand {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  display: flex;
+/* Navbar inner container */
+.header-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
-  width: 51%;
-  height: 118px;
-  padding: 0 24px 0 30px;
-  background: #fff;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  transition: border-color 0.4s ease;
 }
 
-.header-logo {
+.elyse-header.is-scrolled .header-container {
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+/* Logo */
+.elyse-logo {
+  justify-self: start;
   display: block;
-  width: min(68%, 610px);
+  width: 50px;
   line-height: 0;
 }
 
-.header-logo svg {
+.elyse-logo img {
   display: block;
   width: 100%;
   height: auto;
-  overflow: visible;
+  filter: brightness(0) invert(1);
 }
 
-.header-logo svg use {
-  fill: #000;
-}
-
-.header-logo svg path {
-  fill: currentColor;
-}
-
-.header-scroll-link {
-  display: grid;
-  width: 24px;
-  height: 24px;
-  flex: 0 0 24px;
-  place-items: center;
-  color: #fff;
-  background: #080b21;
-  border-radius: 50%;
-  text-decoration: none;
-  transition: transform 0.25s ease;
-}
-
-.header-scroll-link:hover {
-  transform: translateY(3px);
-}
-
-.header-scroll-link svg {
-  width: 13px;
-  height: 13px;
-}
-
-/* Full-screen navigation */
-
-.likova-menu {
-  position: fixed;
-  inset: 0;
-  z-index: 200;
+/* Center navigation */
+.elyse-desktop-nav {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 20px;
-  padding: 8vw;
-  color: #fff;
-  background: #101114;
+  gap: 19px;
 }
 
-.likova-menu > a {
-  width: fit-content;
-  font-size: clamp(32px, 6vw, 84px);
+.elyse-desktop-nav a {
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
   font-weight: 500;
-  letter-spacing: -0.06em;
-  transition: opacity 0.2s ease;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
 }
 
-.likova-menu > a:hover {
-  opacity: 0.55;
+.elyse-desktop-nav a:hover {
+  opacity: 0.6;
 }
 
-.likova-menu__close {
-  position: absolute;
-  top: 25px;
-  right: 28px;
-  padding: 10px 0;
-  color: #fff;
-  background: transparent;
-  border: 0;
-  font-size: 12px;
-  text-transform: uppercase;
-  cursor: pointer;
+/* Booking button */
+.elyse-book-button {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 30px;
+  border-radius: 30px;
+  color: #334238;
+  background: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 10px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.3s ease;
 }
 
-/* Header after scrolling */
-
-.likova-header.is-scrolled {
-  height: 76px;
-  position: fixed;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+.elyse-book-button:hover {
+  background: #e8e8e3;
 }
 
-.likova-header.is-scrolled .header-brand {
-  top: 0;
-  bottom: auto;
-  width: 220px;
-  height: 76px;
-  padding: 0 24px;
-}
-
-.likova-header.is-scrolled .header-logo {
-  width: 170px;
-}
-
-.likova-header.is-scrolled .header-scroll-link {
+.elyse-menu-toggle,
+.elyse-mobile-menu {
   display: none;
 }
 
-.likova-header.is-scrolled .header-menu,
-.likova-header.is-scrolled .header-office,
-.likova-header.is-scrolled .header-favourites,
-.likova-header.is-scrolled .header-contact {
-  top: 25px;
-}
-
-/* Tablet */
-
-@media (max-width: 1000px) {
-  :root {
-    --likova-header-height: 340px;
-  }
-
-  .header-brand {
-    width: 65%;
-    height: 100px;
-  }
-
-  .header-office {
-    left: auto;
-    right: 30%;
-  }
-
-  .header-favourites {
-    left: auto;
-    right: 17%;
-  }
-
-  .header-contact {
-    right: 20px;
-  }
-
-  .header-link {
-    font-size: 10px;
-  }
-
-  .header-logo {
-    width: min(78%, 510px);
-  }
+.logo{
+  font-family: "Fragment Serif, Arial, sans-serif";
 }
 
 /* Mobile */
-
 @media (max-width: 600px) {
-  :root {
-    --likova-header-height: 260px;
+  .elyse-header {
+    height: 58px;
+    padding: 0 5%;
   }
 
-  .header-menu {
-    left: 18px;
+  .header-container {
+    display: flex;
+    justify-content: space-between;
   }
 
-  .header-office {
-    top: 22px;
-    right: 18px;
-  }
-
-  .header-favourites,
-  .header-contact {
+  .elyse-desktop-nav,
+  .elyse-header > .elyse-book-button {
     display: none;
   }
 
-  .header-brand {
-    width: 90%;
-    height: 80px;
-    padding: 0 18px;
+  .elyse-menu-toggle {
+    display: block;
+    border: 0;
+    color: #fff;
+    background: transparent;
+    font-size: 22px;
+    cursor: pointer;
   }
 
-  .header-logo {
-    width: min(78%, 380px);
-  }
-
-  .likova-header.is-scrolled .header-brand {
-    width: 180px;
-    height: 76px;
-    padding: 0 18px;
-  }
-
-  .likova-header.is-scrolled .header-logo {
-    width: 140px;
-  }
-
-  .likova-header.is-scrolled .header-office {
-    top: 28px;
-    right: 18px;
-  }
-
-  .likova-header.is-scrolled .header-menu {
-    top: 29px;
-    left: 18px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .likova-header,
-  .header-burger span,
-  .header-scroll-link {
-    transition: none;
-  }
-}
-.likova-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 20;
-  width: 100%;
-  height: 64px;
-  background: transparent;
-}
-.likova-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 20;
-  width: 100%;
-  height: 64px;
-  background: transparent;
-}
-
-.likova-header__content {
-  width: 100%;
-  height: 100%;
-}
-
-.likova-header__grid {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr auto 1fr;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  padding: 0 2.8%;
-}
-
-.header-menu {
-  grid-column: 1;
-  justify-self: start;
-}
-
-.header-brand {
-  display: none;
-}
-
-.header-office {
-  grid-column: 2;
-  justify-self: center;
-}
-
-.header-favourites {
-  grid-column: 4;
-  justify-self: center;
-}
-
-.header-contact {
-  grid-column: 5;
-  justify-self: end;
-}
-
-.header-link {
-  color: #070b20;
-  font-family: "TT Norms Pro", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.burger-button {
-  display: flex;
-  width: 42px;
-  height: 30px;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-}
-
-.header-burger {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  width: 46px;
-}
-
-.header-burger span {
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: #070b20;
-}
-
-.favourites-link {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.favourites-link svg {
-  width: 18px;
-  height: 17px;
-}
-
-@media (max-width: 768px) {
-  .likova-header__grid {
-    grid-template-columns: 1fr auto auto;
-    gap: 16px;
-    padding: 0 18px;
-  }
-
-  .header-menu {
-    grid-column: 1;
-  }
-
-  .header-office {
+  .elyse-book-button {
     display: none;
   }
 
-  .header-favourites {
-    grid-column: 2;
+  .elyse-mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    background: #111714;
   }
 
-  .header-contact {
-    grid-column: 3;
-  }
-
-  .header-link {
-    font-size: 10px;
+  .elyse-mobile-menu a {
+    color: #fff;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    text-decoration: none;
   }
 }

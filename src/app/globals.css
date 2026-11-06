@@ -1,6 +1,7 @@
 
 
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap");
+
 @import "tailwindcss";
 * {
   margin: 0;
@@ -150,16 +151,6 @@ button {
   align-items: flex-end;
 }
 
-.hero-title {
-  font-family: "Playfair Display", serif; 
-  font-size: clamp(100px, 19vw, 290px);
-  font-weight: 400;
-  letter-spacing: -0.09em;
-  display: flex;
-  overflow: hidden;
-  line-height: .9;
-}
-
 .letter-mask {
   overflow: hidden;
   display: inline-block;
@@ -169,41 +160,3 @@ button {
   display: inline-block;
 }
 
-.hero-right {
-  width: 300px;
-  margin-bottom: 10px;
-}
-
-.hero-right h2 {
-  font-size: 19px;
-  font-weight: 400;
-  text-transform: lowercase;
-  margin-bottom: 25px;
-}
-
-.hero-right p {
-  font-size: 13px;
-  line-height: 1.8;
-  color: rgba(255,255,255,.8);
-}
-
-.scroll-link {
-  display: inline-block;
-  margin-top: 55px;
-  font-size: 11px;
-  letter-spacing: 2px;
-}
-
-
-
-.about-top {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12%;
-}
-
-.section-label {
-  font-size: 13px;
-  display: block;
-  margin-bottom: 50px;
-}

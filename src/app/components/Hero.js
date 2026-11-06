@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import "./Hero.css"
 
 export default function Hero() {
   const titleRef = useRef(null);
@@ -54,11 +55,12 @@ export default function Hero() {
           />
         </video>
       </div>
+      
 
-      <div className="hero-content">
+      {/* <div className="hero-content"> 
 
         <h1 ref={titleRef} className="hero-title">
-          {"SHIV".split("").map((letter, index) => (
+          {"SHIVSHIVAYE".split("").map((letter, index) => (
             <span className="letter-mask" key={index}>
               <span className="hero-letter">
                 {letter}
@@ -76,7 +78,7 @@ export default function Hero() {
           </h2>
 
           <p>
-            Welcome to Elyse Residence, where timeless
+            Welcome to SHIVSHIVAYE PVT LTD, where timeless
             design, wellness-focused living and cultural
             enrichment converge in order to create an
             unparalleled sanctuary of elegance and serenity.
@@ -88,7 +90,7 @@ export default function Hero() {
 
         </div>
 
-      </div>
+       </div> */}
     </section>
   );
 }

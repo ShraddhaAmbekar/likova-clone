@@ -1,189 +1,243 @@
-
-.likova-hero {
-  --likova-blue: #304267;
+.hero-section {
   position: relative;
-  min-height: 100svh;
+  width: 100%;
+  height: 100svh;
+  min-height: 650px;
   overflow: hidden;
-  background: #fff;
-  color: #070b20;
+  background: #103b30;
+  color: #fff;
   isolation: isolate;
-  font-family: "TT Norms Pro", Helvetica, Arial, sans-serif;
 }
 
-/* White area at the top */
-.likova-hero__white-space {
-  position: absolute;
-  z-index: 0;
-  inset: 0 0 auto;
-  height: 32.5%;
-  background: #fff;
-}
-
-/* Blue architectural scene */
-.likova-hero__scene {
-  position: absolute;
-  z-index: 1;
-  inset: 32.5% 0 0;
-  overflow: hidden;
-  background: var(--likova-blue);
-}
-
-.likova-hero__building {
+.hero-background {
   position: absolute;
   inset: 0;
-  will-change: transform;
+  z-index: 0;
+  overflow: hidden;
 }
 
-.likova-hero__building-base,
-.likova-hero__building-lights {
+.hero-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(4, 24, 19, 0.25);
+}
+
+.hero-content {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
-}
-
-.likova-hero__building-lights {
+  z-index: 2;
   pointer-events: none;
 }
 
-/* White logo panel overlaps the blue scene */
-.likova-hero__logo-panel {
+.hero-content a {
+  pointer-events: auto;
+}
+/* ================================
+   MAIN TITLE
+================================ */
+
+.hero-title {
   position: absolute;
-  z-index: 3;
-  top: 32.5%;
-  left: 0;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  width: 50.5%;
-  height: 118px;
-  padding: 0 22px 20px;
-  background: #fff;
-}
+  left: 6.5%;
+  bottom: 12%;
 
-.likova-hero__large-logo {
-  display: block;
-  width: min(68%, 610px);
-  color: #595959;
-  line-height: 0;
-}
-
-.likova-hero__large-logo svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  overflow: visible;
-}
-
-.likova-hero__scroll {
-  flex: 0 0 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  margin-bottom: 2px;
-  border-radius: 50%;
-  background: #070b20;
-  color: #fff;
-}
-
-.likova-hero__scroll svg {
-  width: 10px;
-  height: 7px;
-}
-
-/* Slogan on the right */
-.likova-hero__slogan {
-  position: absolute;
-  z-index: 2;
-  top: 46.5%;
-  left: 67.2%;
-  width: 29%;
-  color: #fff;
-}
-
-.likova-hero__slogan p {
   margin: 0;
-  font-size: clamp(20px, 1.4vw, 27px);
+  padding: 0;
+
+ 
+  font-size: clamp(100px, 14vw, 260px);
   font-weight: 400;
-  line-height: 1.18;
-  letter-spacing: -0.02em;
+  line-height: 0.78;
+
+  letter-spacing: -0.075em;
   text-transform: uppercase;
-}
+  white-space: nowrap;
 
-.likova-hero__class {
-  position: absolute;
+  color: #ffffff;
+
   z-index: 2;
-  right: 5%;
-  bottom: 5%;
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  color: #fff;
+  opacity: 0;
+  will-change: transform, opacity;
 }
 
-.likova-hero__class span {
-  font-size: 12px;
-  letter-spacing: 0.06em;
-}
+/* ================================
+   RIGHT CONTENT
+================================ */
 
-.likova-hero__class strong {
-  font-size: 32px;
-  font-weight: 400;
-}
-
-.likova-hero__next {
+.hero-right {
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
+
+  width: 340px;
+  max-width: 25vw;
+
+  right: 7.5%;
+  top: 49%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  z-index: 2;
+  opacity: 0;
+  will-change: transform, opacity;
 }
 
-@media (max-width: 768px) {
-  .likova-hero {
-    min-height: 780px;
-    min-height: 100svh;
+/* Heading */
+
+.hero-right h2 {
+  margin: 0 0 34px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(22px, 1.5vw, 29px);
+  font-weight: 400;
+
+  line-height: 1.4;
+  letter-spacing: -0.035em;
+
+  color: #ffffff;
+  text-transform: lowercase;
+}
+
+/* Description */
+
+.hero-right p {
+  margin: 0;
+
+  max-width: 340px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+
+  line-height: 1.9;
+  letter-spacing: -0.025em;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Explore link */
+
+.scroll-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: 75px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+
+  letter-spacing: 0.13em;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  color: #ffffff;
+
+  transition: opacity 0.3s ease;
+}
+
+.scroll-link:hover {
+  opacity: 0.6;
+}
+
+.scroll-link span {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.scroll-link:hover span {
+  transform: translateY(5px);
+}
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 1024px) {
+
+  .hero-title {
+    left: 4%;
+    bottom: 15%;
+    font-size: 14vw;
   }
 
-  .likova-hero__white-space {
-    height: 28%;
+  .hero-right {
+    right: 5%;
+    width: 290px;
+    max-width: 30vw;
+    top: 45%;
   }
 
-  .likova-hero__scene {
-    inset: 28% 0 0;
+  .hero-right p {
+    font-size: 15px;
+    line-height: 1.7;
   }
 
-  .likova-hero__logo-panel {
-    top: 28%;
-    width: 78%;
-    height: 76px;
-    padding: 0 14px 14px;
+  .hero-right h2 {
+    font-size: 23px;
+    margin-bottom: 22px;
   }
 
-  .likova-hero__large-logo {
-    width: 78%;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+  .hero-section {
+    min-height: 700px;
+    height: 100svh;
   }
 
-  .likova-hero__slogan {
-    top: 39%;
-    left: 7%;
-    width: 86%;
+  .hero-background video {
+    object-position: center;
   }
 
-  .likova-hero__slogan p {
-    font-size: clamp(22px, 6vw, 32px);
+  .hero-title {
+    left: 5%;
+    bottom: 33%;
+    font-size: 15vw;
+    letter-spacing: -0.07em;
+    line-height: 0.9;
   }
 
-  .likova-hero__building-base,
-  .likova-hero__building-lights {
-    object-position: center top;
+  .hero-right {
+    left: 5%;
+    right: auto;
+    top: auto;
+    bottom: 9%;
+    width: 90%;
+    max-width: 90%;
   }
 
-  .likova-hero__class {
-    right: 7%;
-    bottom: 4%;
+  .hero-right h2 {
+    font-size: 18px;
+    line-height: 1.35;
+    margin-bottom: 15px;
   }
+
+  .hero-right p {
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 340px;
+  }
+
+  .scroll-link {
+    margin-top: 25px;
+    font-size: 12px;
+  }
+
 }
